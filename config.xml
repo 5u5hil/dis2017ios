@@ -1,13 +1,8 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "com.infini.dis2017"
-        versionCode = "0.1"
-        version     = "1.0.1" >
+        id          = "com.infini.dis2017"  version     = "1.0.1" >
     <!-- iOS -->
-    <widget CFBundleVersion="2"></widget>
-
     <author>Infini Systems Pvt Ltd</author>
-
     <preference name="SplashScreen" value="screen"/>
     <preference name="orientation" value="portrait"/>
     <preference name="StatusBarOverlaysWebView" value="true"/>
@@ -86,10 +81,8 @@
         <splash src="resources/ios/splash/Default-736h.png" width="1242" height="2208"/>
         <splash src="resources/ios/splash/Default-Landscape-736h.png" width="2208" height="1242"/>
         <splash src="resources/ios/splash/Default-Landscape@2x~ipad.png" width="2048" height="1536"/>
-<!--         <splash src="resources/ios/splash/Default-Landscape@~ipadpro.png" width="2732" height="2048"/> -->
         <splash src="resources/ios/splash/Default-Landscape~ipad.png" width="1024" height="768"/>
         <splash src="resources/ios/splash/Default-Portrait@2x~ipad.png" width="1536" height="2048"/>
-<!--         <splash src="resources/ios/splash/Default-Portrait@~ipadpro.png" width="2048" height="2732"/> -->
         <splash src="resources/ios/splash/Default-Portrait~ipad.png" width="768" height="1024"/>
         <splash src="resources/ios/splash/Default@2x~iphone.png" width="640" height="960"/>
         <splash src="resources/ios/splash/Default~iphone.png" width="320" height="480"/>
