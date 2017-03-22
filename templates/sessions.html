@@ -1,0 +1,55 @@
+<ion-view>
+    <ion-nav-title>{{topheader}}</ion-nav-title>
+    <ion-content>
+        <div ng-bind-html="responsesession.page_data.content"></div> 
+
+
+        <div class="clearfix"></div>
+          <ul class="tabview">
+                <li ng-repeat="tab in sdata" ng-class="{active:isActiveTab(tab.post_title)}" ng-click="onClickTab(tab.post_title)"><span>{{tab.post_title}}</span></li>
+            </ul>
+        <div class="Ncontent">
+          
+            <div id="mainView" class="staticontent">
+                <div  ng-repeat="tab in sdata" ng-if="tab.post_title == activebtn">
+                    <div ng-bind-html="tab.post_content"></div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+
+
+    <div class="bar-footer">
+        <a href="#/app/queries">
+            <div class="sendquery ion-help"></div>
+        </a>
+        <a href="javascript:void(0)" ng-click="checkuserlogin('chatlist');">
+            <div class="chatbtn ion-chatbubble"></div>
+        </a>
+    </div>
+
+
+
+
+
+    <!-- <script type="text/ng-template" id="sspayment.html">
+        <div class="tabcontent bggrey" ng-controller="sessionPaymentCtrl">
+            <div ng-bind-html="sessionpayment"></div>
+        </div>
+    </script>
+    <script type="text/ng-template" id="ssrailways.html">
+        <div class="tabcontent bggrey" ng-controller="sessionRailCtrl">
+            <div ng-bind-html="sessionrailway"></div>
+        </div>
+    </script>
+    <script type="text/ng-template" id="ssmicroclinic.html">
+        <div class="tabcontent bggrey" ng-controller="sessionItCtrl">
+            <div ng-bind-html="sessionIt"></div>
+        </div>
+    </script>
+    <script type="text/ng-template" id="sshitachidata.html">
+        <div class="tabcontent bggrey" ng-controller="sessionDataCtrl">
+            <div ng-bind-html="sessionHdata"></div>
+        </div>
+    </script> -->
+</ion-view>

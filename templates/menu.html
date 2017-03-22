@@ -1,0 +1,83 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-dark">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right" >
+            <div  ng-click="checkuserlogin('chatlist');" class="cbtn">
+               
+                <div class="hicon" ><i class="ion-ios-chatbubble-outline"></i>
+              <div class="count" ng-if="counth.allC">{{counth.allC}}  </div>
+               </div>
+       
+
+               </div>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <div class="mclose" menu-toggle="left"><i class="ion-android-close"></i></div>
+        <div class="menuhead">
+            <div class="applogo" style="background-image:url('http://dis.cruxservers.in/wp-content/uploads/2016/12/logo-menu.png')"></div>
+                <h3 class="userinfo">
+                <span ng-if="loginuserv.display_name">{{loginuserv.display_name}}</span> 
+                <span ng-if="!loginuserv.display_name">Welcome Guest</span> 
+
+                </h3>
+        </div>
+        <ion-content class="top150">
+            <ion-list class="cmenu">
+                <!--    <ion-item menu-close ng-click="login()" class="ntlink">
+          Home
+        </ion-item> -->
+            
+                <ion-item menu-close href="#/app/home">
+                   <i class="ion-arrow-right-b"></i> Home
+                </ion-item>
+                      <ion-item menu-close href="#/app/agenda">
+                   <i class="ion-arrow-right-b"></i> Agenda
+                </ion-item> 
+              <ion-item menu-close href="#/app/partners">
+                   <i class="ion-arrow-right-b"></i> Partners
+                </ion-item> 
+          
+                <ion-item menu-close href="javascript:void();"  ng-click="checkuserlogin('ideasforchange');">
+                   <i class="ion-arrow-right-b"></i> Ideas for Change
+                </ion-item>
+
+          
+                <ion-item menu-close href="javascript:void();" ng-click="checkuserlogin('chatlist');">
+                  <i class="ion-arrow-right-b"></i> Chat
+                </ion-item>
+       
+         
+                <ion-item menu-close href="javascript:void();" ng-click="checkuserlogin('openpoll');">
+                   <i class="ion-arrow-right-b"></i> Live Polls
+                </ion-item>
+                         <ion-item menu-close href="#/app/queries">
+                   <i class="ion-arrow-right-b"></i> Inquiry 
+                </ion-item>
+                <ion-item menu-close href="#/app/contact">
+                  <i class="ion-arrow-right-b"></i>  Contact
+                </ion-item>
+                <ion-item menu-close href="#/app/login" ng-if="!fromid">
+                  <i class="ion-arrow-right-b"></i>  <span>Login</span>
+                </ion-item>
+                <div class="item item-complex curpoint" ng-controller="logoutctrl" ng-if="fromid">
+                    <div menu-close class="item-content" ng-click="logout()">
+
+                 <i class="ion-unlocked"></i>   Logout</div>
+                </div>
+                <ion-item menu-close href="#/app/register" ng-controller="logoutctrl" ng-if="!fromid">
+                   <i class="ion-person"></i> Register
+                </ion-item>
+                <div style="height:20px;"></div>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

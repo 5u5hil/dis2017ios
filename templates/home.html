@@ -1,0 +1,30 @@
+<ion-view  cache-view="false" hide-nav-bar="false">
+ <ion-nav-title>{{homecontent.page_data.heading_title}}</ion-nav-title>
+  <ion-content>
+  <div class="banner home">
+  <div class="slogos">
+  <div class="row">
+    <div class="col txtcenter">
+ <img src="{{slogos}}" alt="">
+    </div>
+    </div>
+
+<div class="row ">
+<div class="col col-50"><a href="javascript:void();"  ng-click="checkuserlogin('ideasforchange');" class="ncbtn">Ideas for Change</a></div>
+<div class="col"><a href="javascript:void();" class="ncbtn" ng-click="checkuserlogin('openpoll');">Live Poll</a></div>
+<div class="col"><a href="" class="ncbtn"  ng-click="checkuserlogin('chatlist');">Chat</a></div>
+</div>
+
+
+  </div>
+  	<img src="{{homecontent.page_data.img}}"  alt="" />
+  </div>
+  <div class="clearfix"></div>
+
+    <div ng-bind-html="homecontent.page_data.content"></div>
+
+  
+  </ion-content>
+
+
+</ion-view>

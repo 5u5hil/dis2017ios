@@ -1,0 +1,53 @@
+<ion-view>
+ <ion-nav-title>{{topheader}}</ion-nav-title>
+  <ion-content>
+<div ng-bind-html="responsetriva.page_data.content"></div>
+  <ul class="tabview">
+        <li ng-repeat="tab in sdata" ng-class="{active:isActiveTab(tab.post_title)}" ng-click="onClickTab(tab.post_title)"><span>{{tab.post_title}}</span></li>
+    </ul>
+<div class="Ncontent">
+  
+    <div id="mainView" class="staticontent">
+        <div  ng-repeat="tab in sdata" ng-if="tab.post_title == activebtn">
+            <div ng-bind-html="tab.post_content"></div>
+        </div>
+    </div>
+</div>
+  </ion-content>
+
+<div class="bar-footer">
+<a href="#/app/queries"><div class="sendquery ion-help"></div></a>
+<a href="javascript:void(0)" ng-click="checkuserlogin('chatlist');"><div class="chatbtn ion-chatbubble"></div></a>
+</div>
+
+
+    <script type="text/ng-template" id="trivia-datasolution.html">
+    <div class="tabcontent inapplink" ng-controller="triviaDatasolutionCtrl">
+    <div ng-bind-html="triviadatasolution" class="colist"></div>
+    </div>
+   </script>
+
+
+
+    <script type="text/ng-template" id="trivia-railway.html">
+    <div class="tabcontent inapplink" ng-controller="triviaRailwayCtrl">
+    <div ng-bind-html="triviaRailway" class="colist"></div>
+    </div>
+   </script>
+
+    <script type="text/ng-template" id="trivia-itsolution.html">
+    <div class="tabcontent inapplink" ng-controller="triviaItsolutionCtrl">
+       <div ng-bind-html="triviIt" class="colist"></div>
+    
+    </div>
+  </script>
+
+    <script type="text/ng-template" id="trivia-payment.html">
+     <div class="tabcontent inapplink" ng-controller="triviaPaymentCtrl">
+    <div ng-bind-html="triviaPayment" class="colist"></div>
+        </div>
+    
+    </div>
+  </script>
+
+</ion-view>

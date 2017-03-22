@@ -1,0 +1,30 @@
+<ion-view>
+    <ion-nav-title>Chat</ion-nav-title>
+    <div class="headtab">
+        <div>
+            <label class="item item-input bgwhite">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Search" ng-model="usearch">
+            </label>
+        </div>
+    </div>
+    <ion-content>
+        <div id="mainView" class="mt45 chatlisting">
+            <div ng-include="chatcurrentTab"></div>
+        </div>
+
+        <script type="text/ng-template" id="cuser">
+            <div class="list">
+                <div ng-repeat="user in userdata | filter:usearch" ng-class="user.msgCnt=='0' ? '':'unread'" ng-if="user.user_type!=1" >
+                    <div class="item ulist" ng-click="gotoCpage(user.ID)" ng-class="user.checkMsg > 0 ? 'closeruser':'' ">
+                        {{user.fullname}}
+                        <br/>
+                        <small ng-if="user.companyname && user.designation">{{user.designation}} - {{user.companyname}} </small>
+                         <div class="count" ng-if="user.msgCnt!=0">{{user.msgCnt}}</div>
+                    </div>
+                   
+                </div>
+            </div>
+        </script>
+    </ion-content>
+</ion-view>

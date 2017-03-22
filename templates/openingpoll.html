@@ -1,0 +1,117 @@
+<ion-view>
+    <ion-nav-title>{{hptitle}}</ion-nav-title>
+    <ion-nav-buttons side="right">
+        <button class="button icon ion-refresh" ng-click="reloadresult()">
+        </button>
+    </ion-nav-buttons>
+    <ion-content  class="greybg">
+        <div ng-show="pollstatic">
+            <div ng-bind-html="pollstaticContent.page_data.content"></div>
+        </div>
+
+     <div ng-hide="pollstatic">
+
+            <div class="clearfix"></div>
+            <div class="pageHead">
+                <div class="row">
+                    <div class="col col-100">
+                        <h3 class="ptitle txtleft">
+                     
+                        <span>Opening Poll</span>
+                        </h3>
+                        </div>
+                </div>
+            </div>
+            <h5 class="txtcenter fgreen" ng-if="result">{{result}}</h5>
+            <div class="Ncontent pollcont" ng-show="!fstatus">
+                <ion-list>
+                    <div class="card ccard" ng-repeat="qt in polld">
+                        <form name="test{{$parent.$index}}">
+                            <div class="item item-divider">
+                                {{ qt.title }}
+                                <br/>
+                                <span class="sessioname">{{qt.session_name}} </span>
+                            </div>
+                            <div class="item item-text-wrap" id="qnp_{{qt.id}}">
+                                <span id="err_{{qt.id}}" class="errort"></span>
+                                <div class="cradio plist" ng-repeat="opt in qt.options" ng-init="data" ng-if="opt.id!=''">
+                                    <ion-radio name="test{{$parent.$index}}" ng-model="ans[qt.id]" ng-value="'{{opt.id}}'" ng-class="qt.participant=='invalid' ? 'test':''">{{opt.option}} </ion-radio>
+                                    <div id="per_{{qt.id}}_{{opt.id}}">{{per}}</div>
+                                    <div class="pollscore" ng-if="qt.participant=='invalid'">{{opt.per}}</div>
+                                </div>
+                                <div class="overlay" ng-if="qt.participant=='invalid'"> </div>
+                            </div>
+                            <button type="button" class="button button-outline button-positive bar" ng-click="pollsubmit(ans[qt.id], qt.id)" id="qn_{{qt.id}}" ng-if="qt.participant=='valid'">Submit </button>
+                            <div ng-if="qt.participant=='invalid'">
+                                <!-- Thank you. Your vote submitted successfully -->
+                                <div class="successmsg" ng-click="reloadresult()">View Updated Results</div>
+                            </div>
+                            <!-- Thank you. Your vote submitted successfully -->
+                            <div class="successmsg polbtn" id="psub_{{qt.id}}" ng-click="reloadresult()">View Updated Results</div>
+                        </form>
+                    </div>
+                </ion-list>
+            </div>
+
+
+             <div class="Ncontent" ng-show="fstatus">
+              <h4> 
+              Please Share your feedback for {{datafeedbak.session_pname}} Session
+              </h4>
+              <br/>
+                <form name="feedbackform" id="feedbackform" ng-submit="sessionfeedback(fdata)">
+              
+                   
+                        <h5>How was this Session ?</h5>
+                         <div style="padding: 0px 0 20px 0">
+                         <ionic-ratings ratingsobj='ratingsObject' index='$index'></ionic-ratings>
+                        </div>
+               
+                <label class="item item-input">
+                    <textarea placeholder="Review (if any)" rows="4" ng-model="fdata.comment"></textarea>
+                </label>
+                <button type="submit" class="button button-block button-assertive brd-r0 mt10"> &nbsp; Submit &nbsp;</button>
+                </form>
+                <span class="errort">{{rerror}}</span>
+                <br/>
+                <div class="succmsg"><h4>{{succmsg}}</h4></div>
+                <br/> &nbsp;
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </ion-content>
+<!--    <div class="bar-footer" ng-show="pollstatic">
+        <a href="#/app/queries">
+            <div class="sendquery ion-help"></div>
+        </a>
+        <a href="javascript:void(0)" ng-click="checkuserlogin('chatlist');">
+            <div class="chatbtn ion-chatbubble"></div>
+        </a> 
+    </div> -->
+</ion-view>

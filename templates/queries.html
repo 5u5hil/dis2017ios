@@ -1,0 +1,47 @@
+<ion-view>
+ <ion-nav-title>{{qtext.ctitle}}</ion-nav-title>
+  <ion-content>
+<div class="Ncontent">
+<div class="">
+    <h3 class="txtcenter"><span class="undline">Inquiry</span></h3>
+  <h4 class="txtcenter mt20">{{qtext.qheading}}
+      </h4>
+
+
+<div class="fgreen txtcenter" ng-if="mailresult"><br/>{{mailresult}}</div>
+  <div class="list mt20">
+  <form name="querys" id="querys" ng-submit="sendemail(queryobj)">
+  <label class="item item-input">
+    <input type="text" placeholder="Full Name" name="fullname" ng-model="queryobj.fullname" required="">
+  </label>
+  <label class="item item-input">
+    <input type="email" placeholder="Email" name="useremail" ng-model="queryobj.useremail" required="">
+  </label>
+	<label class="item item-input">
+    <input type="text" placeholder="Mobile" name="mobile" ng-model="queryobj.mobile" required="">
+  </label>
+  
+
+
+  <label class="item item-input mtb15">
+    <textarea type="text" placeholder="Message" name="query" ng-model="queryobj.query" required="" rows="4"></textarea>
+  </label>
+
+ <button type="submit" class="button button-block button-balanced brd-r0 mt10" ng-disabled="querys.$invalid">Submit</button>
+
+</form>
+</div>
+
+
+
+</div>
+
+
+    </div>
+    
+  </ion-content>
+
+<!-- <div class="bar-footer">
+<a href="javascript:void(0)" ng-click="checkuserlogin('chatlist');"><div class="chatbtn ion-chatbubble"></div></a>
+</div> -->
+</ion-view>

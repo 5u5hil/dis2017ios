@@ -1,0 +1,83 @@
+<ion-view>
+ <ion-nav-title><span style="text-transform:initial;">Ideas for Change</span></ion-nav-title>
+     <div class="headtab">
+        <div>
+            <label class="item item-input bgwhite">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Search by name" ng-model="usearch">
+            </label>
+        </div>
+    </div>
+  <ion-content class="greybg mt45 hasfooterbar">
+
+<div class="list card shareideas" ng-repeat="ideasc in postideas |  filter:usearch">
+  <div class="item">
+    <h2>{{ideasc.user_name}}</h2>
+    <p>{{ideasc.designation}}, {{ideasc.company_name}}</p>
+  </div>
+  <div class="item item-body">
+    <p>
+     
+      {{ideasc.post_content}}
+    </p>
+    <p>
+      <div class="subdued">
+      {{ ideasc.added_date }}
+      </div> 
+    </p>
+  </div>
+</div>
+
+
+<!-- <div class="list card shareideas">
+  <div class="item">
+    <h2>Ganesh </h2>
+    <p>B.D.M - Essentio</p>
+  </div>
+  <div class="item item-body">
+    <p>
+      This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+      the content is from a card-body consisting of an image and paragraph text. The footer
+      consists of tabs, icons aligned left, within the card-footer.
+    </p>
+    <p>
+      <a href="#" class="subdued">November 05, 1955</a>
+    </p>
+  </div>
+</div> -->
+
+
+  </ion-content>
+
+
+<div class="bar bar-footer bar-balanced" ng-click="modal.show()">
+  <div class="title tbtn" >Share Your Ideas</div>
+</div>
+
+    <script id="shareideasform" type="text/ng-template">
+      <div class="modal cpopup">
+        <header class="bar bar-header bar-dark">
+          <h1 class="title">Share Your Ideas</h1>
+          <div class="button button-clear" ng-click="modal.hide()"><span class="icon ion-close"></span></div>
+        </header>
+        <content has-header="true" padding="true">
+
+        <form  name="ideasforchange" ng-submit="submitidea(idata)">
+             <div class="formdiv">
+        <h5>Send Your Creative Ideas and Suggestions For Digital India</h5>
+     
+    <label class="item item-input">
+    <textarea placeholder="Share your idea here..." rows="10" ng-model="idata.ideatext"></textarea>
+  </label>
+  </div>
+        <button type="submit" class="bar bar-footer bar-balanced" >
+<div class="txtcenter fsize18 w100">Submit</div>
+</button>
+</form>
+        </content>
+
+      </div>
+    </script>
+
+
+</ion-view>

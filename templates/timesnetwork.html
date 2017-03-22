@@ -1,0 +1,11 @@
+<ion-view>
+ <ion-nav-title>{{timesnetworktext.page_data.heading_title}}</ion-nav-title>
+  <ion-content>
+    <div ng-bind-html="timesnetworktext.page_data.content"></div>
+  </ion-content>
+
+<div class="bar-footer">
+<a href="#/app/queries"><div class="sendquery ion-help"></div></a>
+<a href="javascript:void(0)" ng-click="checkuserlogin('chatlist');"><div class="chatbtn ion-chatbubble"></div></a>
+</div>
+</ion-view>
