@@ -1,6 +1,6 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "com.infini.dis2017"  version     = "1.0.1" >
+        id = "com.infini.dis2017"  version = "1.0.1" >
     <!-- iOS -->
     <author>Infini Systems Pvt Ltd</author>
     <preference name="SplashScreen" value="screen"/>
@@ -25,7 +25,6 @@
     <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
     <plugin name="cordova-plugin-device-motion" spec="1.2.1" />
     <plugin name="onesignal-cordova-plugin" spec="2.0.8" />
-    <plugin name="cordova-plugin-google-analytics" spec="1.7.4" />
     <plugin name="cordova-plugin-statusbar" spec="2.1.3" />
     <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
     <plugin name="cordova-plugin-x-toast" spec="2.5.2" />

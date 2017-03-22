@@ -34,13 +34,6 @@ angular.module('disApp', ['ionic', 'disApp.controllers','ngRoute','disApp.rating
 
 
   $ionicPlatform.ready(function() {
- //   if (typeof analytics !== 'undefined') {
- //     analytics.startTrackerWithId("UA-52669715-45");
- //      analytics.trackView("Awesome Controller");
- // } else {
- //     console.log("Google Analytics Unavailable");
- // }
-
 var notificationOpenedCallback = function(result) {
   var data = result.notification.payload.additionalData;
   if (data && data.targetUrl) {
