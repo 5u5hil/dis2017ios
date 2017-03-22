@@ -1,6 +1,6 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id = "com.infini.dis2017"  version = "1.0.1" >
+        id = "com.infini.dis2017"  version = "1.0.2" >
     <!-- iOS -->
     <author>Infini Systems Pvt Ltd</author>
     <preference name="SplashScreen" value="screen"/>
